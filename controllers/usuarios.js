@@ -76,8 +76,13 @@ const usuariosDelete = async(req, res = response) => {
     //FISICAMENTE LO BORRAMOS
     // const usuario = await Usuario.findByIdAndDelete( id );
     const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
+
+    // SABER QUE USUARIO FUE AUTENTICADO
+    // const usuarioAutenticado = req.usuario;
+
     res.json({
         usuario
+        //usuarioAutenticado
     });
 
 }
